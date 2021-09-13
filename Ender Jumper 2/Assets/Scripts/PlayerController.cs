@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movementSpeed = 2;
-        jumpDetermination = 2;
+        movementSpeed = 500;
+        jumpDetermination = 500;
         GetComponent<Rigidbody2D>();
     }
 
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetAxisRaw("Horizontal") > 0.5f)
         {
             // thiccBody2D.velocity = new Vector2(movementSpeed, 0f);
-            thiccBody2D.AddForce(Vector2.right * movementSpeed*1000 * Time.deltaTime);
+            thiccBody2D.AddForce(Vector2.right * movementSpeed * Time.deltaTime);
             // Debug.Log("YEET right");
         }
         if(Input.GetKeyDown(KeyCode.P))
@@ -36,12 +36,12 @@ public class PlayerController : MonoBehaviour
         if(Input.GetAxisRaw("Horizontal") < -0.5f)
         {
             //thiccBody2D.velocity = new Vector2(-movementSpeed, 0f);
-            thiccBody2D.AddForce(Vector2.right * -movementSpeed * 1000 * Time.deltaTime);
+            thiccBody2D.AddForce(Vector2.right * -movementSpeed * Time.deltaTime);
             // Debug.Log("YEEET left");
         }
         //Move up AKA JUMP
         if(Input.GetAxisRaw("Vertical") > 0.5f && isGrounded) {
-            thiccBody2D.AddForce (Vector2.up * jumpDetermination *1000 * Time.deltaTime, ForceMode2D.Impulse);
+            thiccBody2D.AddForce (Vector2.up * jumpDetermination  * Time.deltaTime, ForceMode2D.Impulse);
             isGrounded = false;
             //thiccBody2D.velocity = new Vector2(0f,jumpDetermination);
             //thiccBody2D.AddForce(Vector2.up * jumpDetermination *1000 * Time.deltaTime);
