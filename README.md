@@ -1,2 +1,4 @@
 # Ender-Jumper-2
-My little game remade in an actual game engine. Unity FTW!
+My school project -> make any .NET Forms project resulted in a pretty fun game with broken mechanics because it was a form.. So I've remade this into an actual game using Unity Engine :). 
+
+Unity FTW!
